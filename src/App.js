@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact";
 import "./index.css";
-import logo from "./logo.png";
+import ProductosContainer from '../src/screens/container/ProductosContainer'
 
 class App extends Component {
   render() {
     return (
-      <MDBContainer>
+      <ProductosContainer>
         <h1>hola</h1>
-      </MDBContainer>
+      </ProductosContainer>
     );
   }
 }
