@@ -20,7 +20,11 @@ const ListaProductos = (props) => (
                     </MDBCol>
                 )
             )
-            : <b>Cargando ...</b>
+            
+            :   
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Cargando...</span>
+                </div>
         }
     </MDBRow>
 );
