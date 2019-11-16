@@ -1,0 +1,22 @@
+1.- listar productos de una api
+2.- ver detalle y poder volver al listado
+
+3.- guardar cache en redis, para no consultar la api a cada rato (guardar el cache de redis por 1 minuto)
+
+4.- codigo en repor github
+
+5.- sacar al menos 25 productos simple ripley (api
+
+//_------------------------------------------//
+- ejemplo de un producto
+
+https://simple.ripley.cl/api/v2/products/by-id/11223951
+
+
+https://ripley-test.herokuapp.com/front/#/2000371667503P
+
+https://medium.com/@kakuherrera/como-conectar-y-consumir-un-api-con-reactjs-parte-2-c4aa3fa244b4
+
+https://mdbootstrap.com/docs/react/components/cards/
+
+https://jsonplaceholder.typicode.com/
