@@ -1,15 +1,14 @@
 import API from './config';
 
 const endpoints = {
-    todo: 'posts',
-    porid: 'posts/'
+    todo: 'all-products',
+    porid: '/product/'
 };
 
 const ProductosService = {
     getAll: () => new Promise((resolve, reject)=>{
         API.get(endpoints.todo).then(
             (res) => {
-                console.log(res);
                 resolve(res.data);
             }
         ).catch(
@@ -19,7 +18,7 @@ const ProductosService = {
 
     getById: (id) => new Promise((resolve, reject)=>{
         API.get(endpoints.porid+id).then(
-            res => resolve(res)
+            res => resolve(res.data)
         ).catch(
             error => reject(error)
         )

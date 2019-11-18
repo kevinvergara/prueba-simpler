@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol } from "mdbreact";
-
+const style_raya = {textDecoration: "line-through"};
 const ListaProductos = (props) => (
     <MDBRow>
         {
@@ -8,13 +8,17 @@ const ListaProductos = (props) => (
                 (producto, index) => (
                     <MDBCol key={index}>
                         <MDBCard style={{ width: "18rem" }}>
-                            <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg" waves />
+                            <MDBCardImage className="img-fluid" src={producto.fullImage} waves />
                             <MDBCardBody>
-                                <MDBCardTitle>{index + 1} - {producto.title}</MDBCardTitle>
+                                <MDBCardTitle>{producto.shortDescription}</MDBCardTitle>
                                 <MDBCardText>
-                                    {producto.body}
+                                    <b style={style_raya}>Precio: {producto.prices.formattedListPrice} </b> <br/>
+                                    <b>Precio Oferta: {producto.prices.formattedOfferPrice}</b> <br/>
+                                    <br/>
+                                    {producto.name}
+                                    <br/>
                                 </MDBCardText>
-                                <MDBBtn href="#">Ir al Producto</MDBBtn>
+                                <MDBBtn href={"/producto/"+producto.uniqueID} >Ir al Producto</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
@@ -22,9 +26,11 @@ const ListaProductos = (props) => (
             )
             
             :   
-                <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Cargando...</span>
+            <MDBCol>
+                <div className="spinner-border text-primary" role="status">
+                    <span className="sr-only">Cargando...</span>
                 </div>
+            </MDBCol>
         }
     </MDBRow>
 );

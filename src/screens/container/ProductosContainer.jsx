@@ -3,6 +3,7 @@ import ProductoLayout from '../components/ProductoLayout';
 import ListaProductos from '../components/ListaProductos';
 import ProductosService from '../../services/ProductosService';
 
+
 export default class ProductosContainer extends Component {
   state = {
     data: [],
@@ -14,11 +15,11 @@ export default class ProductosContainer extends Component {
 
   getAllProducts = () => {
     ProductosService.getAll()
-    .then(
-      productos => this.setState({
-        data:productos,
-      })
-    )
+    .then( productos => {
+        this.setState({
+          data:productos,
+        });
+    })
     .catch(
       err => console.log("Ocurrió un error",err)
     )
@@ -27,7 +28,7 @@ export default class ProductosContainer extends Component {
   render() {
     return (
       <ProductoLayout>
-        <h1> Listado de peliculas </h1>
+        <h1> Listado de productos </h1>
 
         <ListaProductos 
           data={this.state.data}
